@@ -42,7 +42,7 @@ def pca(data, alpha):
      #   for j in range(4):
     #        A.append(numpy.multiply(data[i][j], eigenvectors))
 
-    A = numpy.dot(data, numpy.transpose(eigenvectors))
+    A = numpy.dot(center_data, numpy.transpose(eigenvectors))
     print(A)
 
     fig, ax = plt.subplots()
