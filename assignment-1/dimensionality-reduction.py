@@ -1,6 +1,7 @@
 import os
 import numpy
-import scipy
+import matplotlib.pyplot as plt
+
 
 
 # Summary Statistics:
@@ -9,7 +10,6 @@ import scipy
 #    sepal width: 2.0  4.4   3.05  0.43   -0.4194
 #   petal length: 1.0  6.9   3.76  1.76    0.9490  (high!)
 #    petal width: 0.1  2.5   1.20  0.76    0.9565  (high!)
-import sklearn
 
 
 def pca(data, alpha):
@@ -21,26 +21,39 @@ def pca(data, alpha):
     eigenvalue_sum = numpy.sum(eigenvalues)
 
     eigenvalues = eigenvalues.tolist()
+    print("eigenvalues")
+    print(eigenvalues)
 
     f_r = 0
     r = 0
     while f_r < alpha:
-        f_r = f_r + eigenvalues.pop(0)
+        f_r = f_r + (eigenvalues.pop(0)/eigenvalue_sum)
         r = r + 1
 
+    eigenvectors = numpy.transpose(eigenvectors)
     eigenvectors = eigenvectors[0:r]
 
+    print("eigenvectors")
+    print(eigenvectors)
+
     A = []
-    B = []
 
-    for i in range(150):
-        for j in range(4):
-            A.append(numpy.multiply(data[i][j], numpy.transpose(eigenvectors)))
+    #for i in range(150):
+     #   for j in range(4):
+    #        A.append(numpy.multiply(data[i][j], eigenvectors))
 
+    A = numpy.dot(data, numpy.transpose(eigenvectors))
     print(A)
 
+    fig, ax = plt.subplots()
+    colors = list('bgrcmykw')
 
+    for i in range(150):
+        x = A[i][0]
+        y= A[i][1]
+        ax.scatter(x, y)
 
+    plt.show()
 
 
 def as_matrix():
@@ -61,8 +74,7 @@ def as_matrix():
 # sample_size = 150
 # data_mean = numpy.array([5.84, 3.05, 3.76, 1.20])
 
-#pca(as_matrix(), 1)
-pca = sklearn.decomposition.PCA(n_components=3)
+pca(as_matrix(), 0.95)
 
 # fileDir = os.path.dirname(os.path.relpath('__file__'))
 # filename = os.path.join(fileDir, 'iris-data-set/iris.data')
