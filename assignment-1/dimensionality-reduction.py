@@ -2,15 +2,11 @@ import os
 import numpy
 import matplotlib.pyplot as plt
 import math
+from itertools import combinations
+from itertools import product
+from sklearn.decomposition import PCA
 
-
-# Summary Statistics:
-#	              Min  Max   Mean    SD   Class Correlation
-#   sepal length: 4.3  7.9   5.84  0.83    0.7826
-#    sepal width: 2.0  4.4   3.05  0.43   -0.4194
-#   petal length: 1.0  6.9   3.76  1.76    0.9490  (high!)
-#    petal width: 0.1  2.5   1.20  0.76    0.9565  (high!)
-
+# Compute variance per plant feature.
 def compute_features_variance(sample_size, data_mean):
     fileDir = os.path.dirname(os.path.relpath('__file__'))
     filename = os.path.join(fileDir, 'iris-data-set/iris.data')
@@ -27,11 +23,11 @@ def compute_features_variance(sample_size, data_mean):
         results[2] += (float(line[2]) - data_mean[2]) ** 2
         results[3] += (float(line[3]) - data_mean[3]) ** 2
 
+    # Calculate Variance
     results = [round(result / sample_size, 4) for result in results]
-    print(results)
-    print("0.6889, 0.1849, 3.0976, 0.5776")
-
     data_file.close()
+
+    return results
 
 
 def compute_variance_ratio(eigenvalues, alpha):
@@ -68,28 +64,11 @@ def pca(data, alpha):
 
     result = numpy.dot(center_data, numpy.transpose(eigenvectors))
 
-    plt.figure(figsize=(8, 6))
-    plt.scatter(result[:, 0], result[:, 1])
-
-    # labeling x and y axes
-    plt.xlabel('First Principal Component')
-    plt.ylabel('Second Principal Component')
-
-    plt.show()
-
     return result
 
 
-def compute_similarity_vector(data, pca_data, length):
-    similarity_vector = numpy.zeros([length, 1])
-
-    for i in range(length):
-        similarity_vector[i] = (math.sqrt(sum([(a - b) ** 2 for a, b in zip(data[i], pca_data[i])])))
-
-    print(similarity_vector)
-
-
-def as_matrix():
+# Transform data frame to numpy array
+def data_to_numpy():
     file_dir = os.path.dirname(os.path.abspath('__file__'))
     filename = os.path.join(file_dir, 'iris-data-set/iris.data')
     data_file = open(filename, 'r')
@@ -98,11 +77,128 @@ def as_matrix():
 
     for line in data_file.readlines():
         line = line.split(",")
-        line.pop()
+        line.pop()  # Remove names from array.
         matrix.append(line)
 
     return numpy.array(matrix).astype(numpy.float)
 
 
-compute_features_variance(sample_size=150, data_mean=numpy.array([5.84, 3.05, 3.76, 1.20]))
-compute_similarity_vector(as_matrix(), pca(as_matrix(), 0.95), 150)
+def average_euclidean_distance(points):
+    esum = 0
+    for tuple in points:
+        esum = esum + math.sqrt(sum([(a - b) ** 2 for a, b in zip(tuple[0], tuple[1])]))
+    return esum / len(points)
+
+
+def plot_pca(array, dimension):
+    plt.figure()
+
+    if dimension == 2:  # 2D Plot
+        plt.scatter(array[:50, 0], array[:50, 1], color='red')
+        plt.scatter(array[50:100, 0], array[50:100, 1], color='green')
+        plt.scatter(array[100:150, 0], array[100:150, 1], color='blue')
+
+        # labeling x and y axes
+        plt.xlabel('First Principal Component')
+        plt.ylabel('Second Principal Component')
+
+    elif dimension == 3:    # 3D plot
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection='3d')
+        plt.scatter(array[:50, 0], array[:50, 1], array[:50, 2], color='red', marker='o')
+        plt.scatter(array[50:100, 0], array[50:100, 1], array[50:100, 2], color='green', marker='o')
+        plt.scatter(array[100:150, 0], array[100:150, 1], array[100:150, 2], color='blue', marker='o')
+
+        # labeling x, y and z axes
+        ax.set_xlabel('First Principal Component')
+        ax.set_ylabel('Second Principal Component')
+        ax.set_zlabel('Third Principal Component')
+
+    plt.show()
+
+
+# ---------------------------------------- Data Exploration ----------------------------------------
+print("------ Data Exploration ------")
+print("Variance Per Feature: ")
+variance_array = compute_features_variance(sample_size=150, data_mean=numpy.array([5.84, 3.05, 3.76, 1.20]))
+print("Sepal Length Variance: ", variance_array[0])
+print("Sepal Width Variance: ", variance_array[1])
+print("Petal Length Variance: ", variance_array[2])
+print("Petal Width Variance: ", variance_array[3], '\n')
+
+# ---------------------------------------- Data Analysis: PCA ----------------------------------------
+
+data = data_to_numpy()
+
+# Compute PCA for 3 different dimensions using our algorithm.
+PC_1 = pca(data, 0.92)
+PC_2 = pca(data, 0.93)
+PC_3 = pca(data, 0.98)
+PC_4 = pca(data, 1)
+
+# Compute PCA result using sklearn library.
+pca_sklearn = PCA(n_components=2)
+transformed_data = pca_sklearn.fit_transform(data)
+
+# Plot both PCA results so we can compare them. PART D
+plot_pca(PC_2, 2)
+plot_pca(transformed_data, 2)
+
+# ---------------------------------------- Dimensionality reduction evaluation ----------------------------------------
+print("------ Dimensionality reduction evaluation ------")
+
+# Compute euclidean distance per class and print it.
+# Euclidean distance for 1 PC
+print("Average Euclidean Distances 1 PC:")
+print(average_euclidean_distance(list(combinations(PC_1[:50], 2))))
+print(average_euclidean_distance(list(combinations(PC_1[50:100], 2))))
+print(average_euclidean_distance(list(combinations(PC_1[100:150], 2))), '\n')
+
+# Euclidean distance for 2 PC
+print("Average Euclidean Distances 2 PC:")
+print(average_euclidean_distance(list(combinations(PC_2[:50], 2))))
+print(average_euclidean_distance(list(combinations(PC_2[50:100], 2))))
+print(average_euclidean_distance(list(combinations(PC_2[100:150], 2))), '\n')
+
+# Euclidean distance for 3 PC
+print("Average Euclidean Distances 3 PC:")
+print(average_euclidean_distance(list(combinations(PC_3[:50], 2))))
+print(average_euclidean_distance(list(combinations(PC_3[50:100], 2))))
+print(average_euclidean_distance(list(combinations(PC_3[100:150], 2))), '\n')
+
+# Euclidean distance for 4 PC
+print("Average Euclidean Distances 4 PC:")
+print(average_euclidean_distance(list(combinations(PC_4[:50], 2))))
+print(average_euclidean_distance(list(combinations(PC_4[50:100], 2))))
+print(average_euclidean_distance(list(combinations(PC_4[100:150], 2))), '\n')
+
+# Euclidean distance between each individual 1 PC component
+print("Average Euclidean Distances 1 PC between each different component")
+print(average_euclidean_distance(list(product(PC_1[:50], PC_1[50:100]))))
+print(average_euclidean_distance(list(product(PC_1[:50], PC_1[100:150]))))
+print(average_euclidean_distance(list(product(PC_1[50:100], PC_1[100:150]))), '\n')
+
+# Euclidean distance between each individual 2 PC component
+print("Average Euclidean Distances 2 PC between each different component")
+print(average_euclidean_distance(list(product(PC_2[:50], PC_2[50:100]))))
+print(average_euclidean_distance(list(product(PC_2[:50], PC_2[100:150]))))
+print(average_euclidean_distance(list(product(PC_2[50:100], PC_2[100:150]))), '\n')
+
+# Euclidean distance between each individual 3 PC component
+print("Average Euclidean Distances 3 PC between each different component")
+print(average_euclidean_distance(list(product(PC_3[:50], PC_3[50:100]))))
+print(average_euclidean_distance(list(product(PC_3[:50], PC_3[100:150]))))
+print(average_euclidean_distance(list(product(PC_3[50:100], PC_3[100:150]))), '\n')
+
+# Euclidean distance between each individual 4 PC component
+print("Average Euclidean Distances 4 PC between each different component")
+print(average_euclidean_distance(list(product(PC_4[:50], PC_4[50:100]))))
+print(average_euclidean_distance(list(product(PC_4[:50], PC_4[100:150]))))
+print(average_euclidean_distance(list(product(PC_4[50:100], PC_4[100:150]))), '\n')
+
+# Compare 3D graphs of both algorithms
+pca_sklearn = PCA(n_components=3)
+transformed_data = pca_sklearn.fit_transform(data)
+
+plot_pca(PC_3, 3)
+plot_pca(transformed_data, 3)
