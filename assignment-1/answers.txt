@@ -1,0 +1,47 @@
+---------------------------------------- Data Exploration ----------------------------------------
+Variance Per Feature:
+Sepal Length Variance:  0.6811
+Sepal Width Variance:  0.1868
+Petal Length Variance:  3.0924
+Petal Width Variance:  0.5785
+
+---------------------------------------- Dimensionality reduction evaluation ----------------------------------------
+Average Euclidean Distances 1 PC:
+0.24467305251448088
+0.6802465701842633
+0.8011548354008716
+
+Average Euclidean Distances 2 PC:
+0.6216748092279661
+0.8860244528952501
+1.012697157057505
+
+Average Euclidean Distances 3 PC:
+0.6737463518330125
+0.9771309935029682
+1.1330467354269789
+
+Average Euclidean Distances 4 PC:
+0.6981219428990977
+0.9973606733116123
+1.1767808010528573
+
+Average Euclidean Distances 1 PC between each different component
+3.17283337520779
+4.749688899731592
+1.5915175873815537
+
+Average Euclidean Distances 2 PC between each different component
+3.2768914745530315
+4.801004919049111
+1.7406825410082318
+
+Average Euclidean Distances 3 PC between each different component
+3.293553187075681
+4.816752417762368
+1.82285281720319
+
+Average Euclidean Distances 4 PC between each different component
+3.2984011885318023
+4.822425729453133
+1.8424123863209017
