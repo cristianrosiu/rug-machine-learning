@@ -6,6 +6,7 @@ from itertools import combinations
 from itertools import product
 from sklearn.decomposition import PCA
 
+
 # Compute variance per plant feature.
 def compute_features_variance(sample_size, data_mean):
     fileDir = os.path.dirname(os.path.relpath('__file__'))
@@ -102,7 +103,7 @@ def plot_pca(array, dimension):
         plt.xlabel('First Principal Component')
         plt.ylabel('Second Principal Component')
 
-    elif dimension == 3:    # 3D plot
+    elif dimension == 3:  # 3D plot
         fig = plt.figure()
         ax = fig.add_subplot(111, projection='3d')
         plt.scatter(array[:50, 0], array[:50, 1], array[:50, 2], color='red', marker='o')

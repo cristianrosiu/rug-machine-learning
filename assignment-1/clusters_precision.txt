@@ -1,0 +1,74 @@
+FOR 2 CLUSTERS
+
+Linkage: SINGLE Affinity: cityblock Number of clusters: 5
+WSS: 1010199.5054383497 BSS: 24216.494561914937
+Accuracy 0.008596225402090357
+Precision 0.008596420236737554
+Recall 0.9973703544601599
+F score 0.017045920231683113
+
+-----------------------------------------------
+
+Linkage: COMPLETE Affinity: cityblock Number of clusters: 5
+WSS: 363219.9303738315 BSS: 671196.0696264331
+Accuracy 0.008431921758857068
+Precision 0.008437374235979301
+Recall 0.9288148930276253
+F score 0.016722837857315202
+
+-----------------------------------------------
+
+Linkage: AVERAGE Affinity: cityblock Number of clusters: 5
+WSS: 405346.201198245 BSS: 629069.7988020196
+Accuracy 0.008431952178929294
+Precision 0.008437177116833674
+Recall 0.9315810392519762
+F score 0.016722897684291513
+
+-----------------------------------------------
+
+Linkage: WARD Affinity: euclidean Number of clusters: 5
+WSS: 274549.6143291996 BSS: 759866.385671065
+Accuracy 0.00841681336449576
+Precision 0.008423493196385147
+Recall 0.9138961711557995
+F score 0.016693123821317078
+
+-----------------------------------------------------------------------------
+
+FOR 3 CLUSTERS
+
+Linkage: SINGLE Affinity: cityblock Number of clusters: 3
+WSS: 1023269.752598043 BSS: 11146.247402221663
+Accuracy 0.008611832025335293
+Precision 0.008611855256918476
+Recall 0.9996868513708282
+F score 0.017076603212243448
+
+-----------------------------------------------
+
+Linkage: COMPLETE Affinity: cityblock Number of clusters: 3
+WSS: 583846.4994598784 BSS: 450569.5005403862
+Accuracy 0.008437818054999187
+Precision 0.008443072038558133
+Recall 0.9313160673349847
+F score 0.01673443400064752
+
+-----------------------------------------------
+
+Linkage: AVERAGE Affinity: cityblock Number of clusters: 3
+WSS: 817103.667959189 BSS: 217312.33204107557
+Accuracy 0.008620709580775621
+Precision 0.008621592135858303
+Recall 0.9882649558580875
+F score 0.017094056266916714
+
+-----------------------------------------------
+
+Linkage: WARD Affinity: euclidean Number of clusters: 3
+WSS: 512658.4814312568 BSS: 521757.5185690078
+Accuracy 0.008576083396267083
+Precision 0.008580391482480897
+Recall 0.9446931344170417
+F score 0.017006319180974592
+
