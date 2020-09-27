@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebb9a8d5-7813-41b7-a367-737099c92a2c" name="Default Changelist" comment="" />
+    <list default="true" id="ebb9a8d5-7813-41b7-a367-737099c92a2c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assignment-2/od-clustering.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment-2/toy_set.npy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="eac846e8-8e35-46e3-a23d-0262122fb45c" />
+  <component name="JupyterTrust" id="ad25f6ab-2105-460c-a713-1f93ee9cf9d7" />
   <component name="ProjectId" id="1hMv02BrA5VNCQsK2Ht3kjQajBV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -19,16 +30,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assignment-2" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assignment-2" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\University\rug-machine-learning\assignment-1" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.od-clustering">
     <configuration name="dimensionality-reduction" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -51,8 +66,38 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="od-clustering" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="rug-machine-learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assignment-2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assignment-2/od-clustering.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.od-clustering" />
+      </list>
+    </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ebb9a8d5-7813-41b7-a367-737099c92a2c" name="Default Changelist" comment="" />
@@ -63,11 +108,13 @@
       <workItem from="1599833553877" duration="11153000" />
       <workItem from="1599844727895" duration="210000" />
       <workItem from="1599901087993" duration="2626000" />
+      <workItem from="1601220151715" duration="7501000" />
+      <workItem from="1601228081660" duration="1269000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1019" y="524" key="#Notifications" timestamp="1599833525714">
@@ -82,22 +129,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="467" key="FileChooserDialogImpl/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599833547006" />
-    <state width="2517" height="266" key="GridCell.Tab.0.bottom" timestamp="1599903717793">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1802" height="369" key="GridCell.Tab.0.bottom" timestamp="1601229034054">
+      <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state width="2517" height="266" key="GridCell.Tab.0.bottom/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599903717793" />
-    <state width="2517" height="266" key="GridCell.Tab.0.center" timestamp="1599903717793">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1802" height="369" key="GridCell.Tab.0.bottom/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601229034054" />
+    <state width="1802" height="369" key="GridCell.Tab.0.center" timestamp="1601229034054">
+      <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state width="2517" height="266" key="GridCell.Tab.0.center/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599903717793" />
-    <state width="2517" height="266" key="GridCell.Tab.0.left" timestamp="1599903717793">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1802" height="369" key="GridCell.Tab.0.center/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601229034054" />
+    <state width="1802" height="369" key="GridCell.Tab.0.left" timestamp="1601229034054">
+      <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state width="2517" height="266" key="GridCell.Tab.0.left/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599903717793" />
-    <state width="2517" height="266" key="GridCell.Tab.0.right" timestamp="1599903717793">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1802" height="369" key="GridCell.Tab.0.left/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601229034054" />
+    <state width="1802" height="369" key="GridCell.Tab.0.right" timestamp="1601229034054">
+      <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state width="2517" height="266" key="GridCell.Tab.0.right/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599903717793" />
+    <state width="1802" height="369" key="GridCell.Tab.0.right/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601229034054" />
     <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1599844716485">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -122,8 +173,13 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1098" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599835591742" />
+    <state x="659" y="260" width="672" height="678" key="search.everywhere.popup" timestamp="1601227033514">
+      <screen x="72" y="28" width="1848" height="1052" />
+    </state>
+    <state x="659" y="260" width="672" height="678" key="search.everywhere.popup/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601227033514" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/rug_machine_learning$od_clustering.coverage" NAME="od-clustering Coverage Results" MODIFIED="1601229034047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-2" />
     <SUITE FILE_PATH="coverage/rug_machine_learning$dimensionality_reduction.coverage" NAME="dimensionality-reduction Coverage Results" MODIFIED="1599903700021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
