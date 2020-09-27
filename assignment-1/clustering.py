@@ -16,13 +16,13 @@ import scipy.cluster.hierarchy as shc
 import sys
 
 
-def plot_pca(data_frame):
+def plot_pca(data_frame,targets):
     fig = plt.figure(figsize=(8, 8))
     ax = fig.add_subplot(1, 1, 1)
     ax.set_xlabel('Principal Component 1', fontsize=15)
     ax.set_ylabel('Principal Component 2', fontsize=15)
     ax.set_title('2 component PCA', fontsize=20)
-    targets = data_frame.target.unique()
+
     colors = [random_color() for i in range(len(targets))]
     colors = set(colors)
 
@@ -108,10 +108,10 @@ def perf_measure(true_labels, predicted_labels):
     return TP, FP, TN, FN
 
 # Apply dimensionality reduction on a dataset
-def d_reduction(n_comp, targets):
+def d_reduction(data, n_comp, targets):
     pca = PCA(n_components=n_comp)
     # Apply PCA Algorithm in order to reduce the dimension to the desired number.
-    principal_components = pca.fit_transform(x)
+    principal_components = pca.fit_transform(data)
     # Convert result to pandas data frame
     principal_df = pd.DataFrame(data=principal_components
                                 , columns=['principal component 1', 'principal component 2'])
@@ -172,7 +172,7 @@ labels_freq = [landmark_data.tolist().count(label) for label in unique_labels]
 freq_bar(unique_labels, labels_freq, "Landmarks Frequency Bar Plot", "Landmark", "Frequency")
 
 # Reduce data to 2 dimensions
-reduced_data = d_reduction(2, landmark_df)
+reduced_data = d_reduction(x, 2, landmark_df)
 reduced_data = reduced_data[reduced_data['target'] < 21]
 # Plot newly reduced data
 plot_pca(reduced_data)
@@ -188,6 +188,14 @@ elbow_method(x, 5)
 # Try H Clustering with optimal K
 h_clustering_analysis(x, 3)
 
+# Bonus
+h_clustering_analysis(reduced_data.to_numpy(), 3)
+
+model = AgglomerativeClustering(n_clusters=5, affinity='euclidean', linkage='ward')
+
+reduced_clusters_labels = model.fit_predict(reduced_data.to_numpy())
+plt.scatter(reduced_data['principal component 1'], reduced_data['principal component 2'], c = reduced_clusters_labels, cmap='rainbow')
+plt.show()
 
 
 
