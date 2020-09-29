@@ -1,5 +1,6 @@
 import numpy as np
 from sklearn.cluster import DBSCAN
+from scipy.spatial import distance_matrix
 
 
 # Create simple class used as Enum
@@ -26,9 +27,10 @@ class DBscan():
         self.n_pts = len(points)
         # List of labels
         self.labels = [0] * self.n_pts
-        # List of status.
+        # Property Lists
         self.status_list = [Status.New] * self.n_pts
         self.member_list = [False] * self.n_pts
+        self.distances = distance_matrix(self.points, self.points)
 
     def fit(self):
         # Initial cluster label
@@ -50,10 +52,14 @@ class DBscan():
             if self.status_list[i] == Status.Noise:
                 self.labels[i] = -1
 
+    # Compute neighbourhood of a core point
     def region_query(self, i):
         neighbours = set()
-        for j, other_point in enumerate(self.points):
-            if distance(self.points[i], other_point) <= self.eps:
+        # Check core point's distances to all points
+        for j in range(len(self.points)):
+            if self.distances[i][j] <= self.eps:
+                # If found point distances is in the radius
+                # of the core point, add it to neighbourhood
                 neighbours.add(j)
         return neighbours
 
@@ -73,11 +79,3 @@ class DBscan():
         self.labels[i] = cluster
         self.member_list[i] = True
 
-
-if __name__ == "__main__":
-    data = np.load('toy_set.npy')
-
-    dbscan = DBscan(data)
-    dbscan.fit()
-
-    print(dbscan.labels)
