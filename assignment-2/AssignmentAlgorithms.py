@@ -1,5 +1,8 @@
 import numpy as np
-from sklearn.cluster import DBSCAN
+from numpy.random import permutation
+import random
+import sys
+import matplotlib.pyplot as plt
 from scipy.spatial import distance_matrix
 
 
@@ -78,4 +81,52 @@ class DBscan():
     def add_to_cluster(self, cluster, i):
         self.labels[i] = cluster
         self.member_list[i] = True
+
+
+class VQ:
+    def __init__(self, K, learning_rate, epochs):
+        self.K = K
+        self.learning_rate = learning_rate
+        self.epochs = epochs
+        self.prototypes = []
+        self.squared_errors = []
+
+    def init_prototypes(self, data):
+        for i in range(self.K):
+            self.prototypes.append(np.copy(data[random.randint(0, len(data))]))
+        self.prototypes = np.array(self.prototypes)
+
+    def update_prototype(self, prototype_index, point):
+        self.prototypes[prototype_index] += self.learning_rate * (point - self.prototypes[prototype_index])
+
+    def plot_epoch(self, X, epoch_number):
+        plt.title('Positions in Epoch:%d' % epoch_number, fontsize=20)
+
+        plt.scatter(X[:, 0], X[:, 1], c='b')
+        plt.scatter(self.prototypes[:, 0], self.prototypes[:, 1], c='r')
+
+        plt.show()
+
+    def evaluate_winner(self, data_point):
+        winner = (0, sys.maxsize)
+        for index, prototype in enumerate(self.prototypes):
+            distance = np.linalg.norm(prototype - data_point)
+            if distance < winner[1]:
+                winner = (index, distance)
+        return winner[0], winner[1]
+
+    def fit(self, X):
+        self.init_prototypes(X)
+        self.plot_epoch(X, 0)
+        for epoch in range(self.epochs):
+            randomized_data = permutation(X)
+            sum_squared = 0.0
+            for point in randomized_data:
+                winner_index, distance = self.evaluate_winner(point)
+                for i in range(len(point)):
+                    error = point[i] - self.prototypes[winner_index][i]
+                    sum_squared += error**2
+                self.update_prototype(winner_index, point)
+            self.squared_errors.append(sum_squared)
+        self.plot_epoch(X, 0)
 

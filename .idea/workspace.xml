@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebb9a8d5-7813-41b7-a367-737099c92a2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assignment-2/mnist-clustering.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment-2/toy-clustering.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment-2/AssignmentAlgorithms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assignment-2/vq-application.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment-2/od-clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignment-2/ODClustering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-2/ODClustering.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-2/dbscan-gif/dbscan-0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-2/dbscan-gif/dbscan-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-2/dbscan-gif/dbscan-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-2/dbscan-gif/dbscan-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-2/dbscan-gif/dbscan-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-2/dbscan-gif/dbscan-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-2/dbscan-gif/dbscan-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-2/dbscan-gif/dbscan-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-2/dbscan-gif/dbscan-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-2/dbscan-gif/dbscan-9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-2/dbscan-gif/ezgif.com-gif-maker.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-2/mnist-clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignment-2/mnist-clustering.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +56,7 @@
       <recent name="$PROJECT_DIR$/assignment-2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.toy-clustering">
+  <component name="RunManager" selected="Python.vq-application">
     <configuration name="ODClustering" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="rug-machine-learning" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -155,8 +167,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="vq-application" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="rug-machine-learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assignment-2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assignment-2/vq-application.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.vq-application" />
         <item itemvalue="Python.toy-clustering" />
         <item itemvalue="Python.ODClustering" />
         <item itemvalue="Python.mnist-clustering" />
@@ -184,6 +219,9 @@
       <workItem from="1601298391625" duration="15665000" />
       <workItem from="1601335031381" duration="54000" />
       <workItem from="1601381381887" duration="3823000" />
+      <workItem from="1601491823422" duration="826000" />
+      <workItem from="1601642955456" duration="3992000" />
+      <workItem from="1601647453702" duration="9583000" />
     </task>
     <servers />
   </component>
@@ -195,44 +233,52 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1019" y="524" key="#Notifications/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599833525714" />
+    <state x="653" y="141" width="676" height="832" key="#VQ" timestamp="1601646610397">
+      <screen x="72" y="28" width="1848" height="1052" />
+    </state>
+    <state x="653" y="141" width="676" height="832" key="#VQ/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601646610397" />
     <state x="602" y="295" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601246081339">
       <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state x="735" y="355" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599832863821" />
     <state x="602" y="295" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601246081339" />
-    <state x="691" y="346" width="600" height="423" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601299591441">
+    <state x="691" y="346" width="628" height="423" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601655880723">
       <screen x="72" y="28" width="1848" height="1052" />
     </state>
-    <state x="691" y="346" width="600" height="423" key="#com.intellij.fileTypes.FileTypeChooser/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601299591441" />
-    <state x="837" y="379" width="424" height="491" key="FileChooserDialogImpl" timestamp="1601335082548">
+    <state x="691" y="346" width="628" height="423" key="#com.intellij.fileTypes.FileTypeChooser/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601655880723" />
+    <state x="729" y="303" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601655316163">
+      <screen x="72" y="28" width="1848" height="1052" />
+    </state>
+    <state x="729" y="303" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601655316163" />
+    <state x="837" y="379" width="424" height="491" key="FileChooserDialogImpl" timestamp="1601493072433">
       <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state x="1060" y="467" key="FileChooserDialogImpl/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599833547006" />
-    <state x="837" y="379" width="424" height="491" key="FileChooserDialogImpl/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601335082548" />
-    <state width="1175" height="45" key="GridCell.Tab.0.bottom" timestamp="1601387039326">
-      <screen x="1920" y="0" width="1366" height="768" />
+    <state x="837" y="379" width="424" height="491" key="FileChooserDialogImpl/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601493072433" />
+    <state width="1802" height="257" key="GridCell.Tab.0.bottom" timestamp="1601656368650">
+      <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state width="2517" height="266" key="GridCell.Tab.0.bottom/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599903717793" />
     <state width="1175" height="45" key="GridCell.Tab.0.bottom/72.28.1848.1052/1920.0.1366.768@1920.0.1366.768" timestamp="1601387039326" />
-    <state width="1802" height="305" key="GridCell.Tab.0.bottom/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601320793066" />
-    <state width="1175" height="45" key="GridCell.Tab.0.center" timestamp="1601387039325">
-      <screen x="1920" y="0" width="1366" height="768" />
+    <state width="1802" height="257" key="GridCell.Tab.0.bottom/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601656368650" />
+    <state width="1802" height="257" key="GridCell.Tab.0.center" timestamp="1601656368650">
+      <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state width="2517" height="266" key="GridCell.Tab.0.center/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599903717793" />
     <state width="1175" height="45" key="GridCell.Tab.0.center/72.28.1848.1052/1920.0.1366.768@1920.0.1366.768" timestamp="1601387039325" />
-    <state width="1802" height="305" key="GridCell.Tab.0.center/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601320793066" />
-    <state width="1175" height="45" key="GridCell.Tab.0.left" timestamp="1601387039325">
-      <screen x="1920" y="0" width="1366" height="768" />
+    <state width="1802" height="257" key="GridCell.Tab.0.center/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601656368650" />
+    <state width="1802" height="257" key="GridCell.Tab.0.left" timestamp="1601656368650">
+      <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state width="2517" height="266" key="GridCell.Tab.0.left/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599903717793" />
     <state width="1175" height="45" key="GridCell.Tab.0.left/72.28.1848.1052/1920.0.1366.768@1920.0.1366.768" timestamp="1601387039325" />
-    <state width="1802" height="305" key="GridCell.Tab.0.left/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601320793065" />
-    <state width="1175" height="45" key="GridCell.Tab.0.right" timestamp="1601387039326">
-      <screen x="1920" y="0" width="1366" height="768" />
+    <state width="1802" height="257" key="GridCell.Tab.0.left/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601656368650" />
+    <state width="1802" height="257" key="GridCell.Tab.0.right" timestamp="1601656368650">
+      <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state width="2517" height="266" key="GridCell.Tab.0.right/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599903717793" />
     <state width="1175" height="45" key="GridCell.Tab.0.right/72.28.1848.1052/1920.0.1366.768@1920.0.1366.768" timestamp="1601387039326" />
-    <state width="1802" height="305" key="GridCell.Tab.0.right/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601320793066" />
+    <state width="1802" height="257" key="GridCell.Tab.0.right/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1601656368650" />
     <state width="1802" height="328" key="GridCell.Tab.1.bottom" timestamp="1601301710227">
       <screen x="72" y="28" width="1848" height="1052" />
     </state>
@@ -283,6 +329,7 @@
     <SUITE FILE_PATH="coverage/rug_machine_learning$od_clustering.coverage" NAME="od-clustering Coverage Results" MODIFIED="1601229034047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-2" />
     <SUITE FILE_PATH="coverage/rug_machine_learning$toy_clustering.coverage" NAME="toy-clustering Coverage Results" MODIFIED="1601387061224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-2" />
     <SUITE FILE_PATH="coverage/rug_machine_learning$mnist_clustering.coverage" NAME="mnist-clustering Coverage Results" MODIFIED="1601385753046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-2" />
+    <SUITE FILE_PATH="coverage/rug_machine_learning$vq_application.coverage" NAME="vq-application Coverage Results" MODIFIED="1601656368623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-2" />
     <SUITE FILE_PATH="coverage/rug_machine_learning$_dbscan.coverage" NAME="_dbscan Coverage Results" MODIFIED="1601301688592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr/local/lib/python3.8/dist-packages/sklearn/cluster" />
     <SUITE FILE_PATH="coverage/rug_machine_learning$dimensionality_reduction.coverage" NAME="dimensionality-reduction Coverage Results" MODIFIED="1599903700021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

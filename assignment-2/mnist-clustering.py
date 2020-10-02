@@ -1,10 +1,8 @@
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import DBSCAN
-import numpy as np
 import scipy.io as sio
 import matplotlib.pyplot as plt
-from ODClustering import DBscan
+from AssignmentAlgorithms import DBscan
 
 
 def plot_data(data, labels):
