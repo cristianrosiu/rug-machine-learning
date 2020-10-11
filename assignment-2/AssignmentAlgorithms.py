@@ -4,7 +4,7 @@ import random
 import sys
 import matplotlib.pyplot as plt
 from scipy.spatial import distance_matrix
-
+from sklearn.metrics import confusion_matrix
 
 # Create simple class used as Enum
 class Status:
@@ -82,6 +82,18 @@ class DBscan():
         self.labels[i] = cluster
         self.member_list[i] = True
 
+    def evaluate(self, y_true):
+        # Get the values of the confusion matrix
+        tn, fp, fn, tp = confusion_matrix(y_true, self.labels).ravel()
+        # Compute Accuracy score.
+        accuracy = float((tp + tn)/(tp + tn + fp + fn))
+        # Precision and recall will help calculate the F1 score.
+        precision = float(tp/(tp + fp))
+        recall = float(tp/(tp + fn))
+        # Print the results.
+        print('Accuracy: %f' % accuracy)
+        print('F1 Score: %f' % float((2 * precision * recall)/(precision+recall)))
+
 
 class VQ:
     def __init__(self, K, learning_rate, epochs):
@@ -90,21 +102,49 @@ class VQ:
         self.epochs = epochs
         self.prototypes = []
         self.squared_errors = []
+        self.prototypes_trajectory = {}
+        self.is_fit = False
 
+    # Initialize the prototypes list with random points from the dataset.
     def init_prototypes(self, data):
         for i in range(self.K):
             self.prototypes.append(np.copy(data[random.randint(0, len(data))]))
+            self.prototypes_trajectory[i] = []
         self.prototypes = np.array(self.prototypes)
 
+    # Used to update a winner prototype.
     def update_prototype(self, prototype_index, point):
         self.prototypes[prototype_index] += self.learning_rate * (point - self.prototypes[prototype_index])
 
-    def plot_epoch(self, X, epoch_number):
-        plt.title('Positions in Epoch:%d' % epoch_number, fontsize=20)
+    # Plot all prototypes as red points.
+    def plot_epoch(self, X, epoch_number, trajectory=False):
+        if not self.is_fit:
+            raise Exception('Use fit before you plot')
+        if not trajectory:
+            plt.title('Positions in Epoch:%d' % epoch_number, fontsize=20)
+            plt.scatter(X[:, 0], X[:, 1], c='b')
+            plt.scatter(self.prototypes[:, 0], self.prototypes[:, 1], c='r')
+            plt.show()
+        else:
+            plt.title('Prototypes trajectory', fontsize=20)
+            if epoch_number == 0:
+                plt.scatter(X[:, 0], X[:, 1], c='b')
+                plt.scatter(self.prototypes[:, 0], self.prototypes[:, 1], c='yellow')
+            else:
+                plt.scatter(self.prototypes[:, 0], self.prototypes[:, 1], c='r')
 
-        plt.scatter(X[:, 0], X[:, 1], c='b')
-        plt.scatter(self.prototypes[:, 0], self.prototypes[:, 1], c='r')
+            for element in self.prototypes_trajectory.values():
+                plt.plot(np.array(element)[:, 0], np.array(element)[:, 1])
 
+    # Plots the error curve.
+    def plot_error(self):
+        if not self.is_fit:
+            raise Exception('Use fit before you plot')
+        epochs = range(self.epochs)
+        plt.figure(figsize=(15, 8))
+        plt.plot(epochs, self.squared_errors, 'bx-')
+        plt.xlabel('EPOCH')
+        plt.ylabel('SSE')
         plt.show()
 
     def evaluate_winner(self, data_point):
@@ -115,18 +155,31 @@ class VQ:
                 winner = (index, distance)
         return winner[0], winner[1]
 
-    def fit(self, X):
+    # X is the desired dataset.
+    def fit(self, X, show_trajectory=False, show_plot=False):
+        self.is_fit = True
+        # Randomly initialize K prototypes with actual points from the dataset.
         self.init_prototypes(X)
-        self.plot_epoch(X, 0)
         for epoch in range(self.epochs):
+            # Change data order in every epoch.
             randomized_data = permutation(X)
             sum_squared = 0.0
+            for i in range(len(self.prototypes)):
+                # Keeps track of the history of prototype positions.
+                self.prototypes_trajectory[i].append(list(self.prototypes[i]))
+            if show_trajectory:
+                self.plot_epoch(X, epoch, show_trajectory)
+            if show_plot:
+                self.plot_epoch(X, epoch)
             for point in randomized_data:
+                # Get the closest prototype to current point.
                 winner_index, distance = self.evaluate_winner(point)
+                # Calculate Squared error.
                 for i in range(len(point)):
                     error = point[i] - self.prototypes[winner_index][i]
-                    sum_squared += error**2
+                    sum_squared += error ** 2
+                # Move prototype towards point using the learning_rate.
                 self.update_prototype(winner_index, point)
             self.squared_errors.append(sum_squared)
-        self.plot_epoch(X, 0)
-
+        if show_trajectory:
+            plt.show()

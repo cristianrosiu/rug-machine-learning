@@ -16,7 +16,8 @@ import scipy.cluster.hierarchy as shc
 import sys
 
 
-def plot_pca(data_frame,targets):
+
+def plot_pca(data_frame, targets):
     fig = plt.figure(figsize=(8, 8))
     ax = fig.add_subplot(1, 1, 1)
     ax.set_xlabel('Principal Component 1', fontsize=15)
@@ -83,11 +84,12 @@ def compute_internal_measure(data, clusters_labels, centroids, measure):
             elif measure == 'bss':
                 sum = sum + clusters_labels.count(clusters_labels[i]) * (data_center[j] - center[j]) ** 2
             elif measure == 'sse':
-                sum = sum + (data[i,j] - data_center[j]) **2
+                sum = sum + (data[i, j] - data_center[j]) ** 2
             else:
                 raise Exception("Wrong input for measure")
     # Final sum is the wss/bss value of a specific cluster.
     return sum
+
 
 def perf_measure(true_labels, predicted_labels):
     TP = 0
@@ -107,6 +109,7 @@ def perf_measure(true_labels, predicted_labels):
 
     return TP, FP, TN, FN
 
+
 # Apply dimensionality reduction on a dataset
 def d_reduction(data, n_comp, targets):
     pca = PCA(n_components=n_comp)
@@ -122,6 +125,7 @@ def d_reduction(data, n_comp, targets):
     # Returns new data as a panda dataframe
     return final_df
 
+
 def h_clustering_analysis(x, k):
     linkages = ['single', 'complete', 'average', 'ward']
 
@@ -129,7 +133,7 @@ def h_clustering_analysis(x, k):
         print("Linkage:", link.upper(), "Affinity:", 'cityblock' if link.lower() != 'WARD' else 'EUCLIDEAN',
               "Number of clusters:", k)
         model = AgglomerativeClustering(n_clusters=k, affinity='euclidean', linkage=link) if link.lower() == 'ward' \
-                                        else AgglomerativeClustering(n_clusters=k, affinity='cityblock', linkage=link)
+            else AgglomerativeClustering(n_clusters=k, affinity='cityblock', linkage=link)
         pred_labels = model.fit_predict(x)
         cluster_labels = model.labels_
 
@@ -177,7 +181,6 @@ reduced_data = reduced_data[reduced_data['target'] < 21]
 # Plot newly reduced data
 plot_pca(reduced_data)
 
-
 # ----------- Part C + D -----------
 # Try H Clustering with K = 5
 h_clustering_analysis(x, 5)
@@ -194,14 +197,6 @@ h_clustering_analysis(reduced_data.to_numpy(), 3)
 model = AgglomerativeClustering(n_clusters=5, affinity='euclidean', linkage='ward')
 
 reduced_clusters_labels = model.fit_predict(reduced_data.to_numpy())
-plt.scatter(reduced_data['principal component 1'], reduced_data['principal component 2'], c = reduced_clusters_labels, cmap='rainbow')
+plt.scatter(reduced_data['principal component 1'], reduced_data['principal component 2'], c=reduced_clusters_labels,
+            cmap='rainbow')
 plt.show()
-
-
-
-
-
-
-
-
-
