@@ -1,5 +1,4 @@
 import numpy as np
-import pandas
 import sys
 import matplotlib.pyplot as plt
 
@@ -8,23 +7,17 @@ def euclidean_distance(a, b):
     return np.linalg.norm(a - b)
 
 
-def plot_epoch(X, y, prototypes):
-    plt.scatter(X[:, 0], X[:, 1], c=y.tolist())
-    plt.scatter(prototypes[:, 0], prototypes[:, 1], c='r')
-    plt.show()
-
-
 class LVQ1:
     def __init__(self, n_classes, learning_rate=0.1, prot_per_class=1):
         self.n_classes = n_classes
         self.learning_rate = learning_rate
         self.prot_per_class = prot_per_class
+        self.__trained = False
 
     # Randomly initializes prototypes.
     def __random_init(self, X, y):
         prototypes = []
         prototype_labels = []
-
         labels = np.unique(y)
 
         for i in range(self.n_classes):
@@ -55,20 +48,76 @@ class LVQ1:
         self.prototypes[prototype_index] = self.prototypes[prototype_index] + self.learning_rate * sign * (
                 self.prototypes[prototype_index] - point)
 
-    def train(self, X, y, epochs=10):
+    def __calculate_error(self, X, y):
+        error_sum = 0
+        y_pred = self.predict(X)
+        for i, label in enumerate(y_pred):
+            if label != y[i]:
+                error_sum += 1
+
+        return error_sum / 100
+
+    def __plot_epoch(self, X, y):
+        plt.scatter(X[:, 0], X[:, 1], c=y.tolist())
+        plt.scatter(self.prototypes[:, 0], self.prototypes[:, 1], c='r')
+        plt.show()
+
+    def __plot_error(self, epochs, errors):
+        K = range(1, epochs + 1)
+        plt.figure(figsize=(15, 8))
+        plt.plot(K, errors, 'bx-')
+        plt.xlabel('Epoch')
+        plt.ylabel('Learning Error in %')
+        plt.show()
+
+    def train(self, X, y, epochs=10, plot_error=False, plot_epoch=False, stop_threshold=10):
         self.__random_init(X, y)
+        errors = []
+        prev_error = 0
+        duplicates = 0
         for epoch in range(epochs):
+            if duplicates >= stop_threshold:
+                epochs = epoch
+                break
             points, targets = self.__shuffle_data(X, y)
             for index, point in enumerate(points):
                 winner_index = self.__nearest_neighbour(point)
                 self.__update_prototype(point, index, winner_index, targets)
-            plot_epoch(X, y, self.prototypes)
+            errors.append(self.__calculate_error(X, y))
+            if epoch == 0:
+                prev_error = errors[0]
+            else:
+                current = errors[len(errors) - 1]
+                if prev_error == current:
+                    duplicates += 1
+                else:
+                    duplicates = 0
+                prev_error = current
+        if plot_epoch:
+            self.__plot_epoch(X, y)
+        self.__trained = True
+        if plot_error:
+            self.__plot_error(epochs, errors)
+
+    def predict(self, samples):
+        predicted_labels = []
+        for point in samples:
+            predicted_labels.append(self.prototype_labels[self.__nearest_neighbour(point)])
+        return predicted_labels
 
 
-test = pandas.read_csv('datasets/lvqdata.csv')
-test = test.to_numpy()
+class LinearRegression:
+    def __init__(self):
+        self.weights = np.array([])
 
-test_labels = np.array([1 if i < 50 else 2 for i in range(test.shape[0])])
+    def MSE(self, X, y):
+        sum = 0
 
-lvq = LVQ1(2, 0.1, 1)
-lvq.train(test, test_labels)
+        for i, point in enumerate(X):
+            sum = sum + pow(np.dot(self.weights, point) - y[i], 2)
+
+        return sum / (2 * len(X))
+
+    def train(self, X, y):
+        p_inverse = np.linalg.pinv(X.T.dot(X))
+        self.weights = p_inverse.dot(X.T.dot(y))
