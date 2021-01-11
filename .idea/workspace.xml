@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebb9a8d5-7813-41b7-a367-737099c92a2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assignment-3/lvq-example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assignment-3/regression.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-3/lvq-example.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignment-3/lvq-example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-3/plots/lvq1-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-3/plots/lvq1-1_second.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-3/plots/lvq1-1_third.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-3/plots/lvq1-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-3/plots/lvq1-2_second.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment-3/plots/lvq1-2_third.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment-3/slearning.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignment-3/slearning.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="ad25f6ab-2105-460c-a713-1f93ee9cf9d7" />
+  <component name="JupyterTrust" id="337ae9bf-fa73-4a93-843f-f5a178fd668e" />
   <component name="ProjectId" id="1hMv02BrA5VNCQsK2Ht3kjQajBV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -32,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rug-information-security" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -40,7 +45,7 @@
       <recent name="D:\University\rug-machine-learning\assignment-1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.regression">
+  <component name="RunManager" selected="Python.lvq-example">
     <configuration name="dimensionality-reduction" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -175,8 +180,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.regression" />
         <item itemvalue="Python.lvq-example" />
+        <item itemvalue="Python.regression" />
         <item itemvalue="Python.slearning" />
         <item itemvalue="Python.mnist-clustering" />
         <item itemvalue="Python.toy-clustering" />
@@ -205,6 +210,9 @@
       <workItem from="1602599533047" duration="628000" />
       <workItem from="1602681705531" duration="266000" />
       <workItem from="1602953464742" duration="1822000" />
+      <workItem from="1603219723243" duration="56000" />
+      <workItem from="1603220336585" duration="1324000" />
+      <workItem from="1603298825421" duration="259000" />
     </task>
     <servers />
   </component>
@@ -225,38 +233,43 @@
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state x="691" y="356" width="609" height="410" key="#com.intellij.fileTypes.FileTypeChooser/72.29.1848.1051@72.29.1848.1051" timestamp="1602015709765" />
-    <state x="929" y="493" width="450" height="521" key="FileChooserDialogImpl" timestamp="1602681969936">
-      <screen x="72" y="28" width="1848" height="1052" />
+    <state x="632" y="380" width="450" height="521" key="FileChooserDialogImpl" timestamp="1603299081785">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="1060" y="467" key="FileChooserDialogImpl/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599833547006" />
+    <state x="632" y="380" width="450" height="521" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1603299081785" />
     <state x="929" y="493" width="450" height="521" key="FileChooserDialogImpl/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1602681969936" />
     <state x="929" y="494" width="424" height="491" key="FileChooserDialogImpl/72.29.1848.1051@72.29.1848.1051" timestamp="1602329719841" />
-    <state width="1802" height="273" key="GridCell.Tab.0.bottom" timestamp="1602955287374">
+    <state width="1802" height="276" key="GridCell.Tab.0.bottom" timestamp="1603199095891">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="2517" height="266" key="GridCell.Tab.0.bottom/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599903717793" />
     <state width="1802" height="273" key="GridCell.Tab.0.bottom/72.27.1848.1053/1920.0.1366.768@72.27.1848.1053" timestamp="1602955287374" />
+    <state width="1802" height="276" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1603199095891" />
     <state width="1802" height="266" key="GridCell.Tab.0.bottom/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1602503557497" />
     <state width="1802" height="276" key="GridCell.Tab.0.bottom/72.29.1848.1051@72.29.1848.1051" timestamp="1602333928392" />
-    <state width="1802" height="273" key="GridCell.Tab.0.center" timestamp="1602955287374">
+    <state width="1802" height="276" key="GridCell.Tab.0.center" timestamp="1603199095891">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="2517" height="266" key="GridCell.Tab.0.center/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599903717793" />
     <state width="1802" height="273" key="GridCell.Tab.0.center/72.27.1848.1053/1920.0.1366.768@72.27.1848.1053" timestamp="1602955287374" />
+    <state width="1802" height="276" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1603199095891" />
     <state width="1802" height="266" key="GridCell.Tab.0.center/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1602503557497" />
     <state width="1802" height="276" key="GridCell.Tab.0.center/72.29.1848.1051@72.29.1848.1051" timestamp="1602333928391" />
-    <state width="1802" height="273" key="GridCell.Tab.0.left" timestamp="1602955287374">
+    <state width="1802" height="276" key="GridCell.Tab.0.left" timestamp="1603199095891">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="2517" height="266" key="GridCell.Tab.0.left/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599903717793" />
     <state width="1802" height="273" key="GridCell.Tab.0.left/72.27.1848.1053/1920.0.1366.768@72.27.1848.1053" timestamp="1602955287374" />
+    <state width="1802" height="276" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1603199095891" />
     <state width="1802" height="266" key="GridCell.Tab.0.left/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1602503557497" />
     <state width="1802" height="276" key="GridCell.Tab.0.left/72.29.1848.1051@72.29.1848.1051" timestamp="1602333928391" />
-    <state width="1802" height="273" key="GridCell.Tab.0.right" timestamp="1602955287374">
+    <state width="1802" height="276" key="GridCell.Tab.0.right" timestamp="1603199095891">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="2517" height="266" key="GridCell.Tab.0.right/0.0.2560.1400/-2560.110.2560.1400@0.0.2560.1400" timestamp="1599903717793" />
     <state width="1802" height="273" key="GridCell.Tab.0.right/72.27.1848.1053/1920.0.1366.768@72.27.1848.1053" timestamp="1602955287374" />
+    <state width="1802" height="276" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1603199095891" />
     <state width="1802" height="266" key="GridCell.Tab.0.right/72.28.1848.1052/1920.0.1366.768@72.28.1848.1052" timestamp="1602503557497" />
     <state width="1802" height="276" key="GridCell.Tab.0.right/72.29.1848.1051@72.29.1848.1051" timestamp="1602333928391" />
     <state width="1802" height="339" key="GridCell.Tab.1.bottom" timestamp="1602502354784">
@@ -305,19 +318,25 @@
           <url>file://$PROJECT_DIR$/assignment-2/AssignmentAlgorithms.py</url>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/assignment-3/lvq-example.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/rug_machine_learning$mnist_clustering.coverage" NAME="mnist-clustering Coverage Results" MODIFIED="1602018565202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-2" />
+    <SUITE FILE_PATH="coverage/rug_machine_learning$slearning.coverage" NAME="slearning Coverage Results" MODIFIED="1602333928381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-3" />
     <SUITE FILE_PATH="coverage/rug_machine_learning$od_clustering.coverage" NAME="od-clustering Coverage Results" MODIFIED="1601229034047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-2" />
-    <SUITE FILE_PATH="coverage/rug_machine_learning$mnist_clustering.coverage" NAME="mnist-clustering Coverage Results" MODIFIED="1601385753046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-2" />
-    <SUITE FILE_PATH="coverage/rug_machine_learning$slearning.coverage" NAME="slearning Coverage Results" MODIFIED="1602501749982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-3" />
     <SUITE FILE_PATH="coverage/rug_machine_learning$_dbscan.coverage" NAME="_dbscan Coverage Results" MODIFIED="1601301688592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr/local/lib/python3.8/dist-packages/sklearn/cluster" />
-    <SUITE FILE_PATH="coverage/rug_machine_learning$lvq_example.coverage" NAME="lvq-example Coverage Results" MODIFIED="1602503557490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-3" />
+    <SUITE FILE_PATH="coverage/rug_machine_learning$lvq_example.coverage" NAME="lvq-example Coverage Results" MODIFIED="1603219759648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-3" />
+    <SUITE FILE_PATH="coverage/rug_machine_learning$vq_application.coverage" NAME="vq-application Coverage Results" MODIFIED="1602006898130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-2" />
+    <SUITE FILE_PATH="coverage/rug_machine_learning$regression_test.coverage" NAME="regression_test Coverage Results" MODIFIED="1602944952738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-3" />
     <SUITE FILE_PATH="coverage/rug_machine_learning$ODClustering.coverage" NAME="ODClustering Coverage Results" MODIFIED="1601385980963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-2" />
-    <SUITE FILE_PATH="coverage/rug_machine_learning$vq_application.coverage" NAME="vq-application Coverage Results" MODIFIED="1601656368623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-2" />
-    <SUITE FILE_PATH="coverage/rug_machine_learning$toy_clustering.coverage" NAME="toy-clustering Coverage Results" MODIFIED="1601387061224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-2" />
     <SUITE FILE_PATH="coverage/rug_machine_learning$dimensionality_reduction.coverage" NAME="dimensionality-reduction Coverage Results" MODIFIED="1599903700021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rug_machine_learning$toy_clustering.coverage" NAME="toy-clustering Coverage Results" MODIFIED="1602012332485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-2" />
     <SUITE FILE_PATH="coverage/rug_machine_learning$regression.coverage" NAME="regression Coverage Results" MODIFIED="1602954848539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/assignment-3" />
   </component>
 </project>

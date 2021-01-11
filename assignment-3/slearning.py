@@ -49,13 +49,13 @@ class LVQ1:
                 self.prototypes[prototype_index] - point)
 
     def __calculate_error(self, X, y):
-        error_sum = 0
+        tp_sum = 0
         y_pred = self.predict(X)
         for i, label in enumerate(y_pred):
-            if label != y[i]:
-                error_sum += 1
+            if label == y[i]:
+                tp_sum += 1
 
-        return error_sum / 100
+        return tp_sum / 100
 
     def __plot_epoch(self, X, y):
         plt.scatter(X[:, 0], X[:, 1], c=y.tolist())
@@ -112,7 +112,6 @@ class LinearRegression:
 
     def MSE(self, X, y):
         sum = 0
-
         for i, point in enumerate(X):
             sum = sum + pow(np.dot(self.weights, point) - y[i], 2)
 
